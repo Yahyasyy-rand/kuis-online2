@@ -1,0 +1,5 @@
+<html><body style='font-family:Tahoma;margin:30px'>
+{%- if statistik.peserta == 0 %}<h1>Statistik</h1><p>Belum ada peserta.</p>
+{%- else %}<h1>Statistik {{ id_kuis|safe }}</h1><p>Peserta: {{ statistik.peserta }} · rata-rata {{ statistik.rata_rata }} · tertinggi {{ statistik.tertinggi }} · terendah {{ statistik.terendah }} · lulus {{ statistik.persen_lulus }}%</p><h3>{{ jumlah_peringkat }} besar</h3><table border='1' cellpadding='5'>
+{%- for r in peringkat %}<tr><td>{{ r.peringkat }}</td><td>{{ r.nim }}</td><td>{{ r.skor }}</td><td>{{ r.huruf }}</td></tr>{% endfor %}</table>
+{%- endif %}</body></html>

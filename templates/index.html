@@ -1,0 +1,4 @@
+<html><head><title>Kuis Online</title></head><body style="font-family:Tahoma;margin:30px;background:#fafaf5">
+    <h1>📝 Kuis Online</h1>{% for k in kuis %}<div style="background:white;padding:12px;margin:10px 0;border:1px solid #ddd">
+    <b>{{ k.judul }}</b> — {{ k.soal|length }} soal · lulus ≥ {{ k.nilai_lulus }} · maks {{ k.maks_percobaan }} percobaan<br>
+    <a href="/kuis/{{ k.id }}">Kerjakan</a> · <a href="/kuis/{{ k.id }}/statistik">Statistik</a></div>{% endfor %}</body></html>

@@ -1,0 +1,4 @@
+<html><body style='font-family:Tahoma;margin:30px'><h1>{{ kuis.judul|safe }}</h1><form method='post' action='/kuis/{{ id_kuis|safe }}/jawab'>NIM <input name='nim'>
+{%- for s in kuis.soal %}<p><b>{{ s.no }}. {{ s.pertanyaan|safe }}</b> <small>({{ s.bobot }} poin)</small><br>
+{%- if s.tipe == 'pg' %}{% for p in s.pilihan %}<label><input type='radio' name='{{ s.no }}' value='{{ p[0]|safe }}'> {{ p|safe }}</label><br>{% endfor %}
+{%- else %}<input name='{{ s.no }}'>{% endif %}</p>{% endfor %}<button>Kirim jawaban</button></form></body></html>
