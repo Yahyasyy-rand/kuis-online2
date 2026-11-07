@@ -71,3 +71,11 @@ Semua aturan ini saat ini tertulis **langsung di dalam fungsi route** (sebagian 
 | `data.json` | Data contoh (berubah setiap ada transaksi) |
 | `Dockerfile`, `requirements.txt` | Image Python 3.12 + Flask |
 | `docker-compose.yml` | Menjalankan aplikasi ini di port 5006; folder di-mount ke container sehingga perubahan kode langsung terbaca |
+
+## Alur assertEqual pada Test yang Gagal
+
+<img src="image/assert_equal_flow.png" alt="Flowchart assertEqual pada dua test yang gagal" width="800">
+
+Gambar di atas menunjukkan bagaimana `assertEqual` membandingkan hasil kode dengan harapan test.
+Jika sama, test `ok`. Jika berbeda, test `FAIL`. Pada dua test ini yang salah adalah
+ekspektasi di test (`tidak_lulus` seharusnya `lulus`, dan skor `70` seharusnya `90`), bukan kodenya.
